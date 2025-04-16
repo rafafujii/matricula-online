@@ -31,3 +31,4 @@
   "deploy": "gh-pages -d dist"
 }
 
+"homepage": "https://rafafujii.github.io/matricula-online"

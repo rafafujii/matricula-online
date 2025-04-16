@@ -22,7 +22,7 @@ export default function MatriculaForm() {
     const data = Object.entries(form).map(([key, value]) => [key, String(value)]);
     doc.autoTable({ head: [['Campo', 'Valor']], body: data, startY: 20 });
 
-    doc.save('formulario_matricula.pdf');
+    doc.save('formulario_matricula.pdf'); // gera o download
   };
 
   const handleSubmit = (e) => {

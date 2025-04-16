@@ -1,9 +1,12 @@
+// Projeto Vite completo com geração de PDF funcionando
+// Arquivo: src/App.jsx
+
 import React, { useState } from 'react';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-import './index.css';
+import './App.css';
 
-export default function MatriculaForm() {
+export default function App() {
   const [form, setForm] = useState({});
 
   const handleChange = (e) => {
@@ -22,11 +25,12 @@ export default function MatriculaForm() {
     const data = Object.entries(form).map(([key, value]) => [key, String(value)]);
     doc.autoTable({ head: [['Campo', 'Valor']], body: data, startY: 20 });
 
-    doc.save('formulario_matricula.pdf'); // gera o download
+    doc.save('formulario_matricula.pdf');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (form.medicamentoContinuo === 'sim' && !form.quaisMedicamentos) {
       alert('Por favor, informe quais medicamentos são utilizados.');
       return;
